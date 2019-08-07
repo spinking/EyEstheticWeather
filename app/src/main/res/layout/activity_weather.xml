@@ -19,18 +19,19 @@
             app:layout_constraintBottom_toTopOf="@+id/tv_degree"/>
     <TextView
             android:id="@+id/tv_degree"
-            android:text="TextView"
+            android:text="26"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
+            android:textColor="@color/colorPrimaryDark"
             app:layout_constraintTop_toBottomOf="@+id/iv_weather_icon"
             app:layout_constraintEnd_toEndOf="@+id/iv_weather_icon"
             app:layout_constraintStart_toStartOf="@+id/iv_weather_icon"
             app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintBottom_toTopOf="@+id/tv_chance_of_precipitation"/>
+            app:layout_constraintBottom_toTopOf="@+id/tv_chance_of_precipitation" android:visibility="visible"/>
     <TextView
             android:id="@+id/tv_chance_of_precipitation"
-            android:text="TextView"
+            android:text="30%"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
@@ -41,7 +42,7 @@
             app:layout_constraintBottom_toTopOf="@+id/tv_wind"/>
     <TextView
             android:id="@+id/tv_wind"
-            android:text="TextView"
+            android:text="7мс"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
@@ -52,7 +53,7 @@
             app:layout_constraintBottom_toTopOf="@+id/tv_humidity"/>
     <TextView
             android:id="@+id/tv_humidity"
-            android:text="TextView"
+            android:text="80%"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
@@ -63,7 +64,7 @@
             app:layout_constraintBottom_toTopOf="@+id/tv_UV_index"/>
     <TextView
             android:id="@+id/tv_UV_index"
-            android:text="TextView"
+            android:text="5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
@@ -74,7 +75,7 @@
             app:layout_constraintBottom_toTopOf="@+id/tv_clouds"/>
     <TextView
             android:id="@+id/tv_clouds"
-            android:text="TextView"
+            android:text="65%"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
