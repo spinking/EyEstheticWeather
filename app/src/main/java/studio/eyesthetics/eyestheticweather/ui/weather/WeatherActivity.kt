@@ -5,6 +5,7 @@ package studio.eyesthetics.eyestheticweather.ui.weather
  */
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.TextView
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
@@ -21,12 +22,8 @@ class WeatherActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_weather)
-        initViews(savedInstanceState)
+        initViews()
         initViewModel()
-    }
-
-    override fun onSaveInstanceState(outState: Bundle) {
-        super.onSaveInstanceState(outState)
     }
 
     private fun initViewModel() {
@@ -37,12 +34,13 @@ class WeatherActivity : AppCompatActivity() {
     private fun updateUI(singleWeather: SingleWeather) {
         singleWeather.toMap().also {
             for((k, v) in viewFields) {
+                Log.d("M_WeatherActivity", "${it[k]}")
                 v.text = it[k].toString()
             }
         }
     }
 
-    private fun initViews(savedInstanceState: Bundle?) {
+    private fun initViews() {
         viewFields = mapOf(
             "degree" to tv_degree,
             "precipitationChance" to tv_chance_of_precipitation,

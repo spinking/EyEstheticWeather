@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--font sizes-->
+    <dimen name="font_large_36">36sp</dimen>
+    <dimen name="font_normal_24">24sp</dimen>
+    <dimen name="font_small_18">18sp</dimen>
+
+    <!--spacing-->
+    <dimen name="spacing_normal_16">16dp</dimen>
+</resources>

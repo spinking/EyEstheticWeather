@@ -4,13 +4,23 @@ package studio.eyesthetics.eyestheticweather.models
  * Created by BashkatovSM on 07.08.2019
  */
 data class SingleWeather(
-    val degree: String = "${"\u00b0"}25",
-    val precipitationChance: String = "30%",
-    val wind: String = "7ms",
-    val humidity: String = "86%",
-    val indexUV: String = "3",
-    val clouds: String = "45%"
+    var degree: String,
+    var precipitationChance: String,
+    var wind: String,
+    var humidity: String,
+    var indexUV: String,
+    var clouds: String
 ) {
+
+    init {
+        degree = "25C${"\u00b0"}"
+        precipitationChance = "30%"
+        wind = "7ms"
+        humidity = "86%"
+        indexUV = "3"
+        clouds = "45%"
+    }
+
     fun toMap() : Map<String, Any> = mapOf(
         "degree" to degree,
         "precipitationChance" to precipitationChance,
