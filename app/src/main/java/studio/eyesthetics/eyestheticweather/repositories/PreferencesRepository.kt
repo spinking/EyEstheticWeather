@@ -33,7 +33,7 @@ object PreferencesRepository {
 
     fun saveSingleWeather(singleWeather: SingleWeather) {
         with(singleWeather) {
-            putValue(CLOUDS to degree)
+            putValue(DEGREE to degree)
             putValue(PRECIPITATION_CHANCE to precipitationChance)
             putValue(WIND to wind)
             putValue(HUMIDITY to humidity)

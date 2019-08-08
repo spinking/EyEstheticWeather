@@ -12,14 +12,14 @@ data class SingleWeather(
     var clouds: String
 ) {
 
-    init {
+    /*init {
         degree = "25C${"\u00b0"}"
         precipitationChance = "30%"
         wind = "7ms"
         humidity = "86%"
         indexUV = "3"
         clouds = "45%"
-    }
+    }*/
 
     fun toMap() : Map<String, Any> = mapOf(
         "degree" to degree,
