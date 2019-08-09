@@ -34,6 +34,12 @@ class Adapter(
 
         holder.itemView.setOnClickListener{
             val expanded = singleWeather.isExpanded()
+
+            for (i in 0 until values.size) {
+                values[i].setIsExpanded(false)
+                notifyDataSetChanged()
+            }
+
             singleWeather.setIsExpanded(!expanded)
             notifyItemChanged(position)
         }

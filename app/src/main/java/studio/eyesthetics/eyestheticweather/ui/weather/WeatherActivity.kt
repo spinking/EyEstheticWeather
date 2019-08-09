@@ -18,6 +18,8 @@ import studio.eyesthetics.eyestheticweather.R
 
 class WeatherActivity : AppCompatActivity() {
 
+    lateinit var recyclerView: RecyclerView
+
     //private lateinit var viewModel: SingleWeatherViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -27,7 +29,7 @@ class WeatherActivity : AppCompatActivity() {
         val weatherList = generateFakeValues()
 
         val adapter = Adapter(weatherList)
-        val recyclerView: RecyclerView = rv_weather
+        recyclerView = rv_weather
 
         (recyclerView.itemAnimator as SimpleItemAnimator).supportsChangeAnimations = false
 
@@ -42,6 +44,7 @@ class WeatherActivity : AppCompatActivity() {
         //initViews()
         //initViewModel()
     }
+
 
     private fun generateFakeValues(): MutableList<SingleWeather> {
         val values = mutableListOf<SingleWeather>()
