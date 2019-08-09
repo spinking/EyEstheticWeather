@@ -16,6 +16,7 @@ object PreferencesRepository {
     private const val HUMIDITY = "HUMIDITY"
     private const val INDEX_UV = "INDEX_UV"
     private const val CLOUDS = "CLOUDS"
+    private const val EXPANDED = "EXPANDED"
 
     private val prefs: SharedPreferences by lazy {
         val ctx = App.applicationContext()
@@ -28,7 +29,8 @@ object PreferencesRepository {
         prefs.getString(WIND, "")!!,
         prefs.getString(HUMIDITY, "")!!,
         prefs.getString(INDEX_UV, "")!!,
-        prefs.getString(CLOUDS, "")!!
+        prefs.getString(CLOUDS, "")!!,
+        prefs.getBoolean(EXPANDED, false)
     )
 
     fun saveSingleWeather(singleWeather: SingleWeather) {
@@ -39,6 +41,7 @@ object PreferencesRepository {
             putValue(HUMIDITY to humidity)
             putValue(INDEX_UV to indexUV)
             putValue(CLOUDS to clouds)
+            putValue(EXPANDED to expanded)
         }
     }
 
