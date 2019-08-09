@@ -3,16 +3,11 @@ package studio.eyesthetics.eyestheticweather.adapters
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.LinearLayout
 import android.widget.TextView
-import androidx.databinding.DataBindingUtil
-import androidx.fragment.app.FragmentActivity
-import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.list_item_view.view.*
 import studio.eyesthetics.eyestheticweather.R
 import studio.eyesthetics.eyestheticweather.models.SingleWeather
-import studio.eyesthetics.eyestheticweather.viewmodel.SingleWeatherViewModel
 
 /**
  * Created by BashkatovSM on 08.08.2019
@@ -33,29 +28,19 @@ class Adapter(
         holder.bind(singleWeather)
 
         holder.itemView.setOnClickListener{
-            val expanded = singleWeather.isExpanded()
-
             for (i in 0 until values.size) {
-                values[i].setIsExpanded(false)
-                notifyDataSetChanged()
+                if(i != position) {
+                    values[i].expanded = false
+                    notifyItemChanged(i)
+                }
             }
+            val expanded = singleWeather.isExpanded()
 
             singleWeather.setIsExpanded(!expanded)
             notifyItemChanged(position)
         }
 
     }
-
-    /*override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-
-
-        holder.degree?.text = values[position].degree
-        holder.precipitationChance?.text = values[position].clouds
-        holder.wind?.text = values[position].wind
-        holder.humidity?.text = values[position].humidity
-        holder.indexUV?.text = values[position].indexUV
-        holder.clouds?.text = values[position].clouds
-    }*/
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
