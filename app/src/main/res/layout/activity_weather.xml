@@ -12,7 +12,6 @@
         android:id="@+id/rv_weather"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:layout_collapseMode="parallax"
         />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

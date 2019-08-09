@@ -76,6 +76,7 @@ class Adapter(
 
             subItems?.visibility = (if(expanded) View.VISIBLE else View.GONE)
 
+            degree?.text = singleWeather.degree
             precipitationChance?.text = singleWeather.precipitationChance
             wind?.text = singleWeather.wind
             humidity?.text = singleWeather.humidity

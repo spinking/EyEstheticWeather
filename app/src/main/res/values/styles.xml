@@ -17,6 +17,7 @@
     </style>
 
     <style name="SingleWeather.Text.Degree" parent="SingleWeather.Text">
+        <item name="android:textColor">@android:color/holo_blue_dark</item>
         <item name="android:fontFamily">sans-serif-medium</item>
         <item name="android:textSize">@dimen/font_large_36</item>
     </style>
