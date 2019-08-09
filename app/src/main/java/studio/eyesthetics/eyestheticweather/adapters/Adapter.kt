@@ -3,6 +3,7 @@ package studio.eyesthetics.eyestheticweather.adapters
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.FragmentActivity
@@ -28,6 +29,18 @@ class Adapter(
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+        val singleWeather = values[position]
+        holder.bind(singleWeather)
+
+        holder.itemView.setOnClickListener{
+            val expanded = singleWeather.isExpanded()
+            singleWeather.setIsExpanded(!expanded)
+            notifyItemChanged(position)
+        }
+
+    }
+
+    /*override fun onBindViewHolder(holder: ViewHolder, position: Int) {
 
 
         holder.degree?.text = values[position].degree
@@ -36,7 +49,7 @@ class Adapter(
         holder.humidity?.text = values[position].humidity
         holder.indexUV?.text = values[position].indexUV
         holder.clouds?.text = values[position].clouds
-    }
+    }*/
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
@@ -46,6 +59,7 @@ class Adapter(
         var humidity: TextView? = null
         var indexUV: TextView? = null
         var clouds: TextView? = null
+        var subItems: View? = null
 
         init {
             degree = itemView.tv_degree
@@ -54,6 +68,19 @@ class Adapter(
             humidity = itemView.tv_humidity
             indexUV = itemView.tv_UV_index
             clouds = itemView.tv_clouds
+            subItems = itemView.sub_items
+        }
+
+        fun bind(singleWeather: SingleWeather) {
+            val expanded: Boolean = singleWeather.isExpanded()
+
+            subItems?.visibility = (if(expanded) View.VISIBLE else View.GONE)
+
+            precipitationChance?.text = singleWeather.precipitationChance
+            wind?.text = singleWeather.wind
+            humidity?.text = singleWeather.humidity
+            indexUV?.text = singleWeather.indexUV
+            clouds?.text = singleWeather.clouds
         }
     }
 

@@ -9,7 +9,8 @@ data class SingleWeather(
     var wind: String,
     var humidity: String,
     var indexUV: String,
-    var clouds: String
+    var clouds: String,
+    var expanded: Boolean
 ) {
 
     /*init {
@@ -29,4 +30,12 @@ data class SingleWeather(
         "indexUV" to indexUV,
         "clouds" to clouds
     )
+
+    fun setIsExpanded(expanded: Boolean) {
+        this.expanded = expanded
+    }
+
+    fun isExpanded(): Boolean {
+        return expanded
+    }
 }
