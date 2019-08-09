@@ -27,55 +27,68 @@
             tools:text="26"
             app:layout_constraintEnd_toEndOf="@+id/iv_weather_icon"
             app:layout_constraintTop_toBottomOf="@+id/iv_weather_icon"
-            app:layout_constraintStart_toStartOf="@+id/iv_weather_icon"/>
-    <TextView
-            android:id="@+id/tv_chance_of_precipitation"
+            app:layout_constraintStart_toStartOf="@+id/iv_weather_icon"
+            />
+
+    <LinearLayout
+            android:id="@+id/sub_items"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            style="@style/SingleWeather.Text.Other"
-            tools:text="30%"
+            android:orientation="vertical"
             android:layout_marginTop="8dp"
-            app:layout_constraintTop_toBottomOf="@+id/tv_degree"
-            app:layout_constraintEnd_toEndOf="@+id/tv_degree"
-            app:layout_constraintStart_toStartOf="@+id/tv_degree"/>
-    <TextView
-            android:id="@+id/tv_wind"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            style="@style/SingleWeather.Text.Other"
-            tools:text="7мс"
-            app:layout_constraintEnd_toEndOf="@+id/tv_chance_of_precipitation"
-            app:layout_constraintStart_toStartOf="@+id/tv_chance_of_precipitation"
-            app:layout_constraintTop_toBottomOf="@+id/tv_chance_of_precipitation"/>
-    <TextView
-            android:id="@+id/tv_humidity"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            style="@style/SingleWeather.Text.Other"
-            tools:text="80%"
-            app:layout_constraintEnd_toEndOf="@+id/tv_wind"
-            app:layout_constraintStart_toStartOf="@+id/tv_wind"
-            app:layout_constraintTop_toBottomOf="@+id/tv_wind"/>
-    <TextView
-            android:id="@+id/tv_UV_index"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            style="@style/SingleWeather.Text.Other"
-            tools:text="5"
-            android:layout_marginTop="8dp"
-            app:layout_constraintTop_toBottomOf="@+id/tv_humidity"
-            app:layout_constraintEnd_toEndOf="@+id/tv_humidity"
-            app:layout_constraintStart_toStartOf="@+id/tv_humidity"/>
-    <TextView
-            android:id="@+id/tv_clouds"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            style="@style/SingleWeather.Text.Other"
-            tools:text="65%"
-            app:layout_constraintEnd_toEndOf="@+id/tv_UV_index"
-            app:layout_constraintStart_toStartOf="@+id/tv_UV_index"
-            app:layout_constraintTop_toBottomOf="@+id/tv_UV_index"
-            app:layout_constraintBottom_toBottomOf="parent"
-            android:layout_marginBottom="@dimen/spacing_normal_16"/>
+            app:layout_constraintTop_toBottomOf="@+id/tv_degree" app:layout_constraintEnd_toEndOf="@+id/tv_degree"
+            app:layout_constraintStart_toStartOf="@+id/tv_degree">
+
+        <TextView
+                android:id="@+id/tv_chance_of_precipitation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/SingleWeather.Text.Other"
+                tools:text="30%"
+                android:layout_marginTop="8dp"
+                app:layout_constraintTop_toBottomOf="@+id/tv_degree"
+                app:layout_constraintEnd_toEndOf="@+id/tv_degree"
+                app:layout_constraintStart_toStartOf="@+id/tv_degree"/>
+        <TextView
+                android:id="@+id/tv_wind"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/SingleWeather.Text.Other"
+                tools:text="7мс"
+                app:layout_constraintEnd_toEndOf="@+id/tv_chance_of_precipitation"
+                app:layout_constraintStart_toStartOf="@+id/tv_chance_of_precipitation"
+                app:layout_constraintTop_toBottomOf="@+id/tv_chance_of_precipitation"/>
+        <TextView
+                android:id="@+id/tv_humidity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/SingleWeather.Text.Other"
+                tools:text="80%"
+                app:layout_constraintEnd_toEndOf="@+id/tv_wind"
+                app:layout_constraintStart_toStartOf="@+id/tv_wind"
+                app:layout_constraintTop_toBottomOf="@+id/tv_wind"/>
+        <TextView
+                android:id="@+id/tv_UV_index"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/SingleWeather.Text.Other"
+                tools:text="5"
+                android:layout_marginTop="8dp"
+                app:layout_constraintTop_toBottomOf="@+id/tv_humidity"
+                app:layout_constraintEnd_toEndOf="@+id/tv_humidity"
+                app:layout_constraintStart_toStartOf="@+id/tv_humidity"/>
+        <TextView
+                android:id="@+id/tv_clouds"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/SingleWeather.Text.Other"
+                tools:text="65%"
+                app:layout_constraintEnd_toEndOf="@+id/tv_UV_index"
+                app:layout_constraintStart_toStartOf="@+id/tv_UV_index"
+                app:layout_constraintTop_toBottomOf="@+id/tv_UV_index"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_marginBottom="@dimen/spacing_normal_16"/>
+
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
